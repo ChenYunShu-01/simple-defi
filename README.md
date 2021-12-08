@@ -20,7 +20,9 @@
 9. 当用户质押一定数额的Dai token之后，可以做命令行运行 truffle exec scripts/issue-token.js，给质押了Dai token的用户发相同数额的Dapp token奖励。
 
 **要点**
-1. Dai Token和Dapp Token都是ERC20合约，因为它们都实现了ERC20标准接口函数    contract ERC20 {
+1. Dai Token和Dapp Token都是ERC20合约，因为它们都实现了ERC20标准接口函数
+```javascript
+   contract ERC20 {
    function totalSupply() constant returns (uint theTotalSupply);
    function balanceOf(address _owner) constant returns (uint balance);
    function transfer(address _to, uint _value) returns (bool success);
@@ -30,6 +32,7 @@
    event Transfer(address indexed _from, address indexed _to, uint _value);
    event Approval(address indexed _owner, address indexed _spender, uint _value);
 }
+```
 
 2. Solidity emit event事件，比如Dai Token的Transfer事件，前端React如何监听，以更新DaiTokenBalance & stakingBalance？App.js中实现代码：    daiToken.events.Transfer(async (error, event) => {
         let daiTokenBalance = await daiToken.methods.balanceOf(this.state.account).call()
