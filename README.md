@@ -17,7 +17,7 @@
     - 给TokenFarm合约transfer足够的dapp token，这些token用来不定期给质押的用户发奖励
     - 给第二个account发100个Dai Token，这个账号会用来实现质押和赎回的操作
 8. 以上步骤完成合约部署，运行yarn start，启动react服务，浏览器呈现dapp页面
-9. 当用户质押一定数额的Dai token之后，可以做命令行运行 truffle exec scripts/issue-token.js，给质押了Dai token的用户发相同数额的Dapp token奖励。
+9. 当用户质押一定数额的Dai token之后，可以在命令行运行 truffle exec scripts/issue-token.js，给质押了Dai token的用户发相同数额的Dapp token奖励。
 
 **要点**
 1. Dai Token和Dapp Token都是ERC20合约，因为它们都实现了ERC20标准接口函数
