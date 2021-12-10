@@ -15,7 +15,7 @@
 5. 运行truffle migrate --reset部署合约，第一次部署可以省略--reset，注意在migration文件夹下有自定义的2_deploy_contract.js，前面的序号代表部署的顺序，部署的时候会做这些预设：
     - 给TokenFarm合约transfer足够的dapp token，这些token用来不定期给质押的用户发奖励
     - 给第二个account发100个Dai Token，这个账号会用来实现质押和赎回的操作
-6. 以上步骤完成合约部署，运行yarn start，启动react服务，浏览器呈现dapp页面
+6. 以上步骤完成合约部署，运行yarn start，启动react服务，浏览器呈现dapp页面，
 7. 当用户质押一定数额的Dai token之后，可以在命令行运行 truffle exec scripts/issue-token.js，给质押了Dai token的用户发相同数额的Dapp token奖励。
 
 **要点**
