@@ -20,7 +20,7 @@
 
 **要点**
 1. Dai Token和Dapp Token都是ERC20合约，因为它们都实现了ERC20标准接口函数
-```javascript
+```solidity
    contract ERC20 {
        function totalSupply() constant returns (uint theTotalSupply);
        function balanceOf(address _owner) constant returns (uint balance);
@@ -34,7 +34,7 @@
 ```
 
 2. Solidity emit event事件，比如Dai Token的Transfer事件，前端React如何监听，以更新DaiTokenBalance & stakingBalance？App.js中实现代码：
-```javascript
+```solidity
     daiToken.events.Transfer(async (error, event) => {
         let daiTokenBalance = await daiToken.methods.balanceOf(this.state.account).call()
         this.setState({ daiTokenBalance: daiTokenBalance.toString() })
